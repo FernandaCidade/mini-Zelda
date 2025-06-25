@@ -15,8 +15,11 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	//Definir constantes para o tamanho da janela
 	public static int WIDTH = 480, HEIGHT = 480;
 	
-	//player
+	//Instanciando o player
 	public Player player;
+	
+	//Instânciando o mundo
+	public Word word;
 	
 	public Game() {
 		
@@ -25,6 +28,8 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		this.setPreferredSize(new Dimension(WIDTH, HEIGHT)); //Criando uma nova dimensão
 		
 		player = new Player(32,32);
+		
+		word = new Word();
 	}
 	
 	//responsável pela lógica do jogo 
@@ -45,15 +50,11 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		
 		Graphics g = bs.getDrawGraphics();
 		
-		
-		/*g.fillRect(0, 0, WIDTH, HEIGHT); //Criar um retângulo na tela
-		
-		
-		g.setColor(Color.red);
-		g.fillRect(0, 0, 100, 100);*/
-		g.setColor(Color.black);
+	
+		g.setColor(new Color(0,135,13));
+		g.fillRect(0,0, WIDTH, HEIGHT);
 		player.render(g);
-		
+		word.render(g);
 		
 		bs.show();
 		
@@ -70,6 +71,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		frame.setTitle("Mini Zelda");
 		
 		frame.pack(); // Empacotar tudo e calcular o tamanho certo da nossa janela
+		
 		frame.setLocationRelativeTo(null); //Deixar a Janela centralizada
 		
 		
@@ -88,6 +90,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		while(true) {
 			tick();
 			render();
+			
 			try {
 				Thread.sleep(1000/60);
 			} catch (InterruptedException e) {
@@ -96,13 +99,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 			}
 		}
 	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Override
 	public void keyPressed(KeyEvent e) { //Detectando o botão pressionado
 		
@@ -118,6 +115,14 @@ public class Game extends Canvas implements Runnable, KeyListener {
 			player.down = true;
 		}
 	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 	@Override
 	public void keyReleased(KeyEvent e) { // Quando parar de pressionar o botão, o personagem tem que parar

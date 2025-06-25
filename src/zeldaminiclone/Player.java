@@ -8,6 +8,7 @@ public class Player extends Rectangle{
 	
 	//Controles
 	public boolean right,up,down,left; 
+	
 	//Velocidade do player
 	public int spd = 4;
 	
@@ -25,10 +26,10 @@ public class Player extends Rectangle{
 		}
 		
 		if(up) {
-			y += spd;
+			y -= spd;
 			
 		}else if(down) {
-			y -= spd; 
+			y += spd; 
 		}
 	}
 	
