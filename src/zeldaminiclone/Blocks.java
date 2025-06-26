@@ -12,6 +12,7 @@ public class Blocks extends Rectangle{
 		
 	}
 	
+	
 	public void render(Graphics g) { // renderização dos blocos
 		g.setColor(Color.MAGENTA);
 		g.fillRect(x, y, width, height);

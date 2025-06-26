@@ -18,17 +18,17 @@ public class Player extends Rectangle{
 	
 	public void tick() {
 		
-		if(right) {
+		if(right && Word.isFree(x+spd, y)) {
 			x += spd;
 			
-		}else if(left) {
+		}else if(left  && Word.isFree(x-spd, y)) {
 			x -= spd; 
 		}
 		
-		if(up) {
+		if(up && Word.isFree(x, y-spd)) {
 			y -= spd;
 			
-		}else if(down) {
+		}else if(down && Word.isFree(x, y+spd)) {
 			y += spd; 
 		}
 	}
