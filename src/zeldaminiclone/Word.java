@@ -13,20 +13,20 @@ public class Word {
 	//Construtor
 	public Word() {
 		//Criando blocos na horizontal
-		for(int xx = 0; xx < 15; xx++) { // Calculo baseado no tamanho da tela
+		for(int xx = 0; xx < 15*2; xx++) { // Calculo baseado no tamanho da tela
 			blocos.add(new Blocks(xx*32,0));
 		}
 		//Criando blocos na parte inferior
-		for(int xx = 0; xx < 15; xx++) { // Calculo baseado no tamanho da tela
+		for(int xx = 0; xx < 15*2; xx++) { // Calculo baseado no tamanho da tela
 			blocos.add(new Blocks(xx*32,480-32));
 		}
 		//Criando blocos na vertical
-		for(int yy = 0; yy < 15; yy++) { // Calculo baseado no tamanho da tela
+		for(int yy = 0; yy < 15*2; yy++) { // Calculo baseado no tamanho da tela
 			blocos.add(new Blocks(0,yy*32));
 		}
 		//Criando blocos na vertical
-		for(int yy = 0; yy < 15; yy++) { // Calculo baseado no tamanho da tela
-			blocos.add(new Blocks(480-32,yy*32));
+		for(int yy = 0; yy < 15*2; yy++) { // Calculo baseado no tamanho da tela
+			blocos.add(new Blocks(640-32,yy*32));
 		}
 	}
 	

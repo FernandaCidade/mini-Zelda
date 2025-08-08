@@ -13,7 +13,11 @@ import javax.swing.JFrame;
 public class Game extends Canvas implements Runnable, KeyListener {
 	
 	//Definir constantes para o tamanho da janela
-	public static int WIDTH = 480, HEIGHT = 480;
+	public static int WIDTH = 640, HEIGHT = 480;
+	
+	//Caso queira aumentar a escala de janela 
+	
+	public static int SCALE = 3;
 	
 	//Instanciando o player
 	public Player player;
@@ -56,7 +60,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		
 	
 		g.setColor(new Color(0,135,13));
-		g.fillRect(0,0, WIDTH, HEIGHT);
+		g.fillRect(0,0, WIDTH*SCALE, HEIGHT*SCALE);
 		
 		player.render(g);
 		word.render(g);
