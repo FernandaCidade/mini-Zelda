@@ -27,6 +27,10 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		
 		this.setPreferredSize(new Dimension(WIDTH, HEIGHT)); //Criando uma nova dimensão
 		
+		//iniciando a sprite
+		
+		new Spritesheet();
+		
 		player = new Player(32,32);
 		
 		word = new Word();
@@ -53,6 +57,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	
 		g.setColor(new Color(0,135,13));
 		g.fillRect(0,0, WIDTH, HEIGHT);
+		
 		player.render(g);
 		word.render(g);
 		

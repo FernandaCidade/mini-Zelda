@@ -1,0 +1,37 @@
+package zeldaminiclone;
+
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+public class Spritesheet {
+	
+	public static BufferedImage spritesheet;
+	
+	public static BufferedImage player_front;
+	
+	public static BufferedImage tilleWall;
+
+	
+	public Spritesheet() { 
+		// Tentar localizar a sprite
+		try {
+			spritesheet = ImageIO.read(getClass().getResource("/spritesheet.png"));
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		// inicializando a sprite após a renderização
+		player_front = Spritesheet.getSprite(0,11, 16, 16);
+		tilleWall = Spritesheet.getSprite(286, 259, 16, 16); // foi feito um tillewall na sprite e renderizado. 
+		
+	}
+	
+	//metodo para pegar sub images
+	
+	public static BufferedImage getSprite(int x, int y, int width, int height) {
+		
+		return spritesheet.getSubimage(x, y, width, height);
+	}
+}

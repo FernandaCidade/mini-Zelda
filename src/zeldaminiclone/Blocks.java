@@ -14,10 +14,7 @@ public class Blocks extends Rectangle{
 	
 	
 	public void render(Graphics g) { // renderização dos blocos
-		g.setColor(Color.MAGENTA);
-		g.fillRect(x, y, width, height);
-		g.setColor(Color.black);
-		g.drawRect(x,y,width,height); // Borda
+		g.drawImage(Spritesheet.tilleWall, x,y,32,32,null);
 	}
 	
 	
