@@ -22,27 +22,38 @@ public class Player extends Rectangle{
 	
 	public void tick() {
 		
+		//Para verificar se o personagem está se mexendo
+		boolean moved = false; 
+		
 		if(right && Word.isFree(x+spd, y)) {
 			x += spd;
+			moved = true;
 			
 		}else if(left  && Word.isFree(x-spd, y)) {
 			x -= spd; 
+			moved = true;
 		}
 		
 		if(up && Word.isFree(x, y-spd)) {
 			y -= spd;
+			moved = true;
 			
 		}else if(down && Word.isFree(x, y+spd)) {
 			y += spd; 
+			moved = true;
 		}
 		
-		// Fazendo a animação funcionar
-		curFrames++;
-		if(curFrames == targetFrames) {
-			curFrames = 0;
-			curAnimation++;
-			if(curAnimation == Spritesheet.player_front.length) {
-				curAnimation = 0;
+		
+		if(moved) { //verificando se o personagem se moveu
+			
+			// Fazendo a animação funcionar
+			curFrames++;
+			if(curFrames == targetFrames) {
+				curFrames = 0;
+				curAnimation++;
+				if(curAnimation == Spritesheet.player_front.length) {
+					curAnimation = 0;
+				}
 			}
 		}
 	}
