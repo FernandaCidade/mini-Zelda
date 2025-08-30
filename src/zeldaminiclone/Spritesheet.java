@@ -12,7 +12,10 @@ public class Spritesheet {
 	public static BufferedImage [] player_front;
 	
 	public static BufferedImage tilleWall;
-
+	
+	public static BufferedImage [] inimigo_front;
+//276, 227
+	
 	
 	public Spritesheet() { 
 		// Tentar localizar a sprite
@@ -24,8 +27,18 @@ public class Spritesheet {
 		}
 		// inicializando a sprite após a renderização
 		player_front = new BufferedImage[2];
+		
+		//inicializando a sprite Inimigo
+		inimigo_front = new BufferedImage[2];
+		
 		player_front[0] = Spritesheet.getSprite(0, 11,16, 16);
 		player_front[1] = Spritesheet.getSprite(16, 11,16, 16);
+		
+		
+	
+		inimigo_front[0] = Spritesheet.getSprite(275,229,16, 16);
+		//inimigo_front[0] = Spritesheet.getSprite(371+16,310 ,16, 16);
+		
 		tilleWall = Spritesheet.getSprite(286, 259, 16, 16); // foi feito um tillewall na sprite e renderizado. 
 		
 	}
