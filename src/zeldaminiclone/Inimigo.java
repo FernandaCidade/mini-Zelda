@@ -37,8 +37,8 @@ public class Inimigo extends Rectangle{ //Inimigo vai ser controlado por intelig
 	public void tick() {
 		
 		//Para verificar se o personagem está se mexendo
-		boolean moved = false; 
-			if(right == 1) {
+		boolean moved = true; 
+			if(right == 1 && Word.isFree(x+1, y)) {
 				x ++;
 			}
 				
@@ -53,7 +53,7 @@ public class Inimigo extends Rectangle{ //Inimigo vai ser controlado por intelig
 			if(curFrames == targetFrames) {
 				curFrames = 0;
 				curAnimation++;
-				if(curAnimation == Spritesheet.player_front.length) {
+				if(curAnimation == Spritesheet.inimigo_front.length) {
 					curAnimation = 0;
 				}
 			}

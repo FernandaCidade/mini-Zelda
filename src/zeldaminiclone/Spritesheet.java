@@ -37,7 +37,7 @@ public class Spritesheet {
 		
 	
 		inimigo_front[0] = Spritesheet.getSprite(275,229,16, 16);
-		//inimigo_front[0] = Spritesheet.getSprite(371+16,310 ,16, 16);
+		inimigo_front[1] = Spritesheet.getSprite(292,229,16, 16);
 		
 		tilleWall = Spritesheet.getSprite(286, 259, 16, 16); // foi feito um tillewall na sprite e renderizado. 
 		
