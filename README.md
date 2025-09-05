@@ -12,12 +12,6 @@ Zelda Mini Clone é um jogo 2D simples, inspirado no clássico **The Legend of Z
 ## 🛠 Funcionalidades
  - Renderização gráfica básica com Java 2D
  - Movimento do personagem
- - Loop principal de jogo
- - Estrutura modular com src e bin
- - Preparado para evolução futura com mapas, inimigos, sons, etc.
+ - Inimigos
+ - Tiros para combate
    
-## 🎯 Em Desenvolvimento / Futuras Melhorias
-- Inimigos e combate
-- Itens colecionáveis
-- Música e efeitos sonoros
-- Sistema de fases ou mapas
