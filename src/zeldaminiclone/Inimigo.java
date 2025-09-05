@@ -4,11 +4,12 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Inimigo extends Rectangle{ //Inimigo vai ser controlado por inteligencia artificial
 	
 	//Velocidade do player
-	public int spd = 4;
+	public int spd = 2;
 	
 	//Controles
 	public int right = 1,up = 0,down = 0,left = 0; 
@@ -34,13 +35,49 @@ public class Inimigo extends Rectangle{ //Inimigo vai ser controlado por intelig
 		super(x, y, 32, 32); // posições do player e tamanho dele 
 	}
 	
+	
+	
+	
+	//criando inteligencia artificial
+	public void perseguirPlayer() {
+		Player p = Game.player;
+		
+		if(x < p.x && Word.isFree(x+spd, y)) { //Word.isFree para o inimigo colidir com o bloco
+		
+			
+			if(new Random().nextInt(100)<50) //caso tenha uma probabilidade de 50
+				x+=spd; // ele se mexe
+			
+			
+		}else if(x > p.x && Word.isFree(x-spd, y)) {
+			if(new Random().nextInt(100)<50) 
+				x-=spd;
+		}
+		
+		
+		if(y < p.y && Word.isFree(x, y+spd)) {
+			
+			if(new Random().nextInt(100)<50) 
+				y+=spd;
+		}else if(y > p.y && Word.isFree(x, y-spd)) {
+			
+			if(new Random().nextInt(100)<50) 
+				y-=spd;
+		}
+	}
+	
+	
+	
 	public void tick() {
 		
 		//Para verificar se o personagem está se mexendo
 		boolean moved = true; 
-			if(right == 1 && Word.isFree(x+1, y)) {
-				x ++;
-			}
+		
+		
+		//metodo
+		
+		perseguirPlayer();
+		
 				
 		
 		

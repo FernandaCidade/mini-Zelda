@@ -28,6 +28,9 @@ public class Word {
 		for(int yy = 0; yy < 15*2; yy++) { // Calculo baseado no tamanho da tela
 			blocos.add(new Blocks(640-32,yy*32));
 		}
+		
+		
+		blocos.add(new Blocks(220,220));
 	}
 	
 	//Criando colisões

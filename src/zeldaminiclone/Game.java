@@ -22,7 +22,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	public static int SCALE = 3;
 	
 	//Instanciando o player
-	public Player player;
+	public static Player player;
 	
 	//Instânciando o mundo
 	public Word word;
@@ -45,6 +45,8 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		
 		player = new Player(32,32);
 		word = new Word();
+		inimigos.add(new Inimigo(32,32));
+		inimigos.add(new Inimigo(32,32));
 		inimigos.add(new Inimigo(32,32));
 		
 	}
@@ -81,6 +83,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		
 		for(int i = 0; i < inimigos.size(); i++) {
 			inimigos.get(i).render(g);
+			
 		}
 		word.render(g);
 		
