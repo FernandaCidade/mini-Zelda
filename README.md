@@ -15,7 +15,7 @@ Zelda Mini Clone é um jogo 2D simples, inspirado no clássico **The Legend of Z
  - Inimigos
  - Tiros para combate
 
- ## Imagens
+ ## 📋Testes
  
-<img width="638" height="512" alt="image" src="https://github.com/user-attachments/assets/de855710-2937-4c99-8bdc-1dd19733d843" />
-<img width="637" height="509" alt="image" src="https://github.com/user-attachments/assets/6a6b85db-6ce3-4a0a-a514-b1d193cd6309" />
+https://github.com/user-attachments/assets/8f3dc7ae-ee5c-4b1f-a251-ee4ee2e1194f
+
